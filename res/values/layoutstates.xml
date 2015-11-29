@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="state_pressed">#00ffff</color>
+	<color name="state_focused">#00ff00</color>
+	<color name="transparent_black">#00000000</color>
+</resources>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:id="@+id/appdataLayout"
+	android:layout_margin="10dp">
+
+	<ImageView
+		android:layout_height="75dp"
+		android:layout_width="75dp"
+		android:id="@+id/appdataIcon"
+		android:src="@drawable/ic_launcher"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="AppInfo"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_toRightOf="@id/appdataIcon"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="10dp"
+		android:id="@+id/appdataName"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="com.Ryan.AppInfo"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/appdataName"
+		android:layout_toRightOf="@id/appdataIcon"
+		android:id="@+id/appdataPackage"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="10dp"/>
+
+	<ScrollView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:layout_below="@id/appdataIcon"
+		android:layout_marginTop="2dp">
+
+		<RelativeLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:id="@+id/appdataInnerLayout">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Version:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:id="@+id/appdataVersionLabel"
+				android:layout_marginBottom="6dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="1.0.0"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:id="@+id/appdataVersion"
+				android:layout_marginBottom="6dp"
+				android:layout_alignParentRight="true"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Version code:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_below="@id/appdataVersionLabel"
+				android:layout_marginLeft="15dp"
+				android:id="@+id/appdataVersionCodeLabel"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="0"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_below="@id/appdataVersion"
+				android:layout_alignParentRight="true"
+				android:id="@+id/appdataVersionCode"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Installed on:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_below="@id/appdataVersionCodeLabel"
+				android:layout_marginTop="10dp"
+				android:id="@+id/appdataInstallLabel"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="&lt;DateTime&gt;"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_below="@id/appdataInstallLabel"
+				android:layout_alignParentRight="true"
+				android:id="@+id/appdataInstall"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Last Updated On:"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:id="@+id/appdataUpdateLabel"
+				android:layout_below="@id/appdataInstall"
+				android:layout_marginTop="10dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="&lt;DateTime&gt;"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:id="@+id/appdataUpdate"
+				android:layout_below="@id/appdataUpdateLabel"
+				android:layout_alignParentRight="true"/>
+
+			<RelativeLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_below="@id/appdataUpdate"
+				android:layout_marginTop="10dp"
+				android:id="@+id/appdataPermissionsLayout">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Requests permissions:"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+					android:layout_width="wrap_content"
+					android:id="@+id/appdataPermissionsLabel"
+					android:layout_centerHorizontal="true"/>
+
+				<LinearLayout
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:orientation="vertical"
+					android:layout_below="@id/appdataPermissionsLabel"
+					android:layout_marginTop="10dp"
+					android:id="@+id/appdataPermissionsArray">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="&lt;None&gt;"
+						android:layout_width="wrap_content"
+						android:id="@+id/appdataPermissionInitial"/>
+
+				</LinearLayout>
+
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_below="@id/appdataPermissionsLayout"
+				android:layout_marginTop="10dp"
+				android:id="@+id/appdataAppLayout">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Application data stored in:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:id="@+id/appdataAppDataDirLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="/data/location"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_alignParentRight="true"
+					android:id="@+id/appdataAppDataDir"
+					android:layout_below="@id/appdataAppDataDirLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Process name:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataAppDataDir"
+					android:layout_marginTop="10dp"
+					android:id="@+id/appdataProcessLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="com.Ryan.AppInfo"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataProcessLabel"
+					android:layout_alignParentRight="true"
+					android:id="@+id/appdataProcess"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Targets OS version:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataProcess"
+					android:layout_marginTop="10dp"
+					android:id="@+id/appdataTargetLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="19"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataProcess"
+					android:layout_alignParentRight="true"
+					android:layout_marginTop="10dp"
+					android:id="@+id/appdataTarget"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="OS Version name:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataTargetLabel"
+					android:layout_marginTop="6dp"
+					android:layout_marginLeft="15dp"
+					android:id="@+id/appdataTargetNameLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="KitKat"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataTarget"
+					android:layout_alignParentRight="true"
+					android:layout_marginTop="6dp"
+					android:id="@+id/appdataTargetName"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Current OS version:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataTargetNameLabel"
+					android:layout_marginTop="10dp"
+					android:id="@+id/appdataOSVersionLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="19"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataTargetName"
+					android:layout_marginTop="10dp"
+					android:layout_alignParentRight="true"
+					android:id="@+id/appdataOSVersion"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="OS Version Name:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataOSVersionLabel"
+					android:layout_marginTop="6dp"
+					android:layout_marginLeft="15dp"
+					android:id="@+id/appdataOSVersionNameLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="KitKat"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataOSVersion"
+					android:layout_alignParentRight="true"
+					android:layout_marginTop="6dp"
+					android:id="@+id/appdataOSVersionName"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="OS Version Number:"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataOSVersionNameLabel"
+					android:layout_marginTop="6dp"
+					android:layout_marginLeft="15dp"
+					android:id="@+id/appdataOSVersionNumberLabel"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="4.4.2"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_below="@id/appdataOSVersionName"
+					android:layout_alignParentRight="true"
+					android:layout_marginTop="6dp"
+					android:id="@+id/appdataOSVersionNumber"/>
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</RelativeLayout>
+
