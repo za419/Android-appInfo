@@ -1,5 +1,6 @@
 package com.ryan.utility;
 
+import android.annotation.TargetApi;
 import android.app.*;
 import android.os.*;
 import android.view.*;
@@ -17,13 +18,15 @@ public class MainActivity extends Activity
 {
 	public static MainActivity t;
     /** Called when the activity is first created. */
-    @Override
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+	@Override
     public void onCreate(Bundle savedInstanceState)
 	{
         super.onCreate(savedInstanceState);
 		t=this;
 		setContentView(R.layout.splash);
-		getActionBar().hide();
+		if (Build.VERSION.SDK_INT>=11)
+			getActionBar().hide();
 		findViewById(R.id.splashLayout).postDelayed(new Runnable()
 		{
 			@Override
@@ -55,8 +58,11 @@ public class MainActivity extends Activity
 						}
 						if (packInfo!=null)
 						{
-							((TextView)findViewById(R.id.appdataInstall)).setText(df.format(new Date((packInfo.firstInstallTime))));
-							((TextView)findViewById(R.id.appdataUpdate)).setText(df.format(new Date((packInfo.lastUpdateTime))));
+							if (Build.VERSION.SDK_INT>=9)
+							{
+								((TextView)findViewById(R.id.appdataInstall)).setText(df.format(new Date((packInfo.firstInstallTime))));
+								((TextView)findViewById(R.id.appdataUpdate)).setText(df.format(new Date((packInfo.lastUpdateTime))));
+							}
 							String[] permissions=packInfo.requestedPermissions;
 							if (permissions!=null)
 							{
