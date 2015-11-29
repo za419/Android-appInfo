@@ -175,8 +175,8 @@ public class MainActivity extends Activity
 			return "KitKat";
 		case Build.VERSION_CODES.KITKAT_WATCH:
 			return "KitKat Watch Edition";
-			case Build.VERSION_CODES.LOLLIPOP:
-			case Build.VERSION_CODES.LOLLIPOP_MR1: // Update from here
+		case Build.VERSION_CODES.LOLLIPOP:
+		case Build.VERSION_CODES.LOLLIPOP_MR1: // Update from here
 			return "Lollipop";
 		/*case Build.VERSION_CODES.CUR_DEVELOPMENT: // Comment/Uncomment this as needed
 			return "Development version";*/
