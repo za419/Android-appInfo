@@ -1,18 +1,30 @@
 package com.ryan.utility;
 
 import android.annotation.TargetApi;
-import android.app.*;
-import android.os.*;
-import android.view.*;
-import android.graphics.*;
-import android.graphics.drawable.*;
-import android.widget.*;
-import android.content.pm.*;
-import android.content.pm.PackageManager.*;
-import java.text.*;
-import java.util.*;
-import android.util.*;
-import android.content.res.*;
+import android.app.Activity;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.RyanHodin.utility.R;
+
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.TimeZone;
 
 public class MainActivity extends Activity
 {
@@ -112,7 +124,7 @@ public class MainActivity extends Activity
 				{
 					LinearLayout l=apps.get(i).getDisplayableLayout(t);
 					l.setOnClickListener(ocl);
-					l.setBackgroundDrawable(getResources().getDrawable(R.drawable.appentry));
+					l.setBackgroundResource(R.drawable.appentry);
 					lay.addView(l);
 				}
 			}
@@ -126,7 +138,7 @@ public class MainActivity extends Activity
 		for (int i=0; i<tmp.size(); ++i)
 		{
 			PackageInfo p=tmp.get(i);
-			if ((!getSysPackages) && (p.versionName==null || "".equals(p)))
+			if ((!getSysPackages) && (p.versionName==null || "".equals(p.versionName)))
 				continue;
 			PInfo n=new PInfo();
 			n.applicationName=p.applicationInfo.loadLabel(getPackageManager()).toString();
@@ -182,7 +194,6 @@ public class MainActivity extends Activity
 		case Build.VERSION_CODES.KITKAT_WATCH:
 			return "KitKat Watch Edition";
 		case Build.VERSION_CODES.LOLLIPOP:
-		case Build.VERSION_CODES.LOLLIPOP_MR1: // Update from here
 			return "Lollipop";
 		/*case Build.VERSION_CODES.CUR_DEVELOPMENT: // Comment/Uncomment this as needed
 			return "Development version";*/
